@@ -152,6 +152,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Hexo安装部署以及常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/EndlessCCL/2020/11/30/Hexo%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BB%A5%E5%8F%8A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Hexo安装部署以及常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/EndlessCCL/2020/11/30/Hexo%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BB%A5%E5%8F%8A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2020-11-30T09:07:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-环境依赖"><a href="#一-环境依赖" class="headerlink" title="一 环境依赖"></a>一 环境依赖</h2><ul>
+<li>node.js</li>
+<li>git</li>
+</ul>
+<h2 id="二-安装"><a href="#二-安装" class="headerlink" title="二 安装"></a>二 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三-建站"><a href="#三-建站" class="headerlink" title="三 建站"></a>三 建站</h2><p>新建文件夹，比如 <em>myBlog</em>，然后执行以下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo init myBlog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> myBlog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四-写作"><a href="#四-写作" class="headerlink" title="四 写作"></a>四 写作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new title</span></span><br></pre></td></tr></table></figure>
+
+<p>然后使用markdown工具进行编辑写作。</p>
+<h2 id="五-生成静态页面"><a href="#五-生成静态页面" class="headerlink" title="五 生成静态页面"></a>五 生成静态页面</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo generate or hexo g</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="六-启动"><a href="#六-启动" class="headerlink" title="六 启动"></a>六 启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="七-部署"><a href="#七-部署" class="headerlink" title="七 部署"></a>七 部署</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy or hexo d</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="八-常用命令"><a href="#八-常用命令" class="headerlink" title="八 常用命令"></a>八 常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">init命令 新建一个网站，如果没有设置 folder，Hexo默认在当前目录下建立网站。</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init [folder]</span> </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">new命令 新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">new 参数：-p, --path 自定义新文章的路径</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># -r, --replace	 如果存在同名文章，将其替换</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># -s, --slug	文章的 Slug，作为新文章的文件名和发布后的 URL</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash">hexo new [layout] &lt;title&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">generate命令 生成文章命令。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">generate 参数：-d, --deploy	文件生成后立即部署网站</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#-w, --watch	监视文件变动</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#-b, --bail	生成过程中如果发生任何未处理的异常则抛出异常</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#-f, --force	强制重新生成文件 Hexo 引入了差分机制，如果 public 目录存在，那么 hexo g 只会重新生成改动的文件。使用该参数的效果接近 hexo clean &amp;&amp;hexo generate</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#-c, --concurrency	最大同时生成文件的数量，默认无限制</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash">hexo generate <span class="comment">#简写 hexo g</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">publish命令 发表草稿箱</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo publish [layout] &lt;filename&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">server命令 启动服务器。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">server 参数：-p, --port	重设端口</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#-s, --static	只使用静态文件</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#-l, --log	启动日记记录，使用覆盖记录格式</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">deploy命令 部署网站</span></span><br><span class="line"><span class="meta">#</span><span class="bash">delploy参数： -g, --generate	部署之前预先生成静态文件  || 相当于组合命令 hexo deploy generate</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy <span class="comment">#简写 hexo d</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">clean命令 清除缓存文件 (db.json) 和已生成的静态文件 (public)。</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo clean</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">显示草稿箱</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo --draft</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/EndlessCCL/2020/11/30/Hexo%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BB%A5%E5%8F%8A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -309,6 +402,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
