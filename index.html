@@ -152,6 +152,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-PicGo-GitHub配置图床服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/EndlessCCL/2020/12/01/PicGo-GitHub%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%9C%8D%E5%8A%A1/">PicGo+GitHub配置图床服务</a>
+    </h1>
+  
+
+        
+        <a href="/EndlessCCL/2020/12/01/PicGo-GitHub%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%9C%8D%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2020-12-01T03:15:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>​    刚开始使用Hexo+GitHub Pages搭建个人博客，使用typora作为Markdown文件的编辑器。在插入图片时，使用的是本地图片，需要配置一些参数，并且在上传GitHub时也会将图片打包上传。本着爱折腾的性子，上网搜了一下搭建图床的方案，选定了使用GitHub作为图床服务，既然GitHub不限制我们的私有仓库的个数和大小，那就充分利用起来吧。</p>
+<h2 id="一-设置GitHub图床服务"><a href="#一-设置GitHub图床服务" class="headerlink" title="一 设置GitHub图床服务"></a>一 设置GitHub图床服务</h2><h3 id="1-新建仓库"><a href="#1-新建仓库" class="headerlink" title="1.新建仓库"></a>1.新建仓库</h3><p>​    新建一个GitHub的仓库，设为public，名字可以根据自己喜好设置。</p>
+<h3 id="2-生成token"><a href="#2-生成token" class="headerlink" title="2.生成token"></a>2.生成token</h3><ol>
+<li><p>点击个人头像，选择”settings”，点击进入</p>
+</li>
+<li><p>点击左侧导航栏”Developer settings”，进入</p>
+</li>
+<li><p>点击左侧导航栏”Personal access tokens”,点击右上角”Generate new token”,Note可以随意填写，下方选项勾选”repo”，点击”Generate token”生成token，注意，这个token只出现一次，请复制后妥善保存。</p>
+</li>
+</ol>
+<h3 id="3-配置GitHub-Pages"><a href="#3-配置GitHub-Pages" class="headerlink" title="3. 配置GitHub Pages"></a>3. 配置GitHub Pages</h3><p>参考：<a target="_blank" rel="noopener" href="https://pages.github.com/">官网</a></p>
+<h2 id="二-安装PicGo"><a href="#二-安装PicGo" class="headerlink" title="二 安装PicGo"></a>二 安装PicGo</h2><h3 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1.下载安装"></a>1.下载安装</h3><p>​    下载地址：<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">点此下载</a></p>
+<p>根据操作系统，下载相应的包完成后点击安装即可。</p>
+<h3 id="2-配置GitHub图床"><a href="#2-配置GitHub图床" class="headerlink" title="2.配置GitHub图床"></a>2.配置GitHub图床</h3><ul>
+<li><p>打开PicGo，点击左侧导航栏”图床设置”，选择”GitHub图床 “</p>
+</li>
+<li><p>设定仓库名，<em>你的GitHub账户名</em>/<em>第一步中新建的仓库名</em>，分支选择master，token使用第一步中生成的token，指定存储路径，自定义域名填写配置的GitHub Pages的domain</p>
+</li>
+</ul>
+<p>大功告成，开始新的折腾。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PicGo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">GitHub Pages</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/EndlessCCL/2020/12/01/PicGo-GitHub%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A%E6%9C%8D%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Hexo安装部署以及常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -388,6 +485,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PicGo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">GitHub Pages</a>
               </li>
             
             <div class="clearfix"></div>
