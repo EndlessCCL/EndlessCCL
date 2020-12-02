@@ -8,14 +8,18 @@
   <link rel="dns-prefetch" href="https://endlessccl.github.io">
   <title>java中的一些关键字 | EndlessCCL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="volatilevolatile是一个特征修饰符（type specifier）.volatile的作用是作为指令关键字，确保本条指令不会因编译器的优化而省略，且要求每次直接读值。  原子性：volatile不保证原子性 可见性：volatile保证可见性 有序性：volatile部分保证有序性  volatile关键字禁止指令重排序有两层意思：  当程序执行到volatile变量的读操作或者写操">
+<meta property="og:type" content="article">
 <meta property="og:title" content="java中的一些关键字">
 <meta property="og:url" content="https://endlessccl.github.io/2020/12/01/java%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%B3%E9%94%AE%E5%AD%97/index.html">
 <meta property="og:site_name" content="EndlessCCL">
+<meta property="og:description" content="volatilevolatile是一个特征修饰符（type specifier）.volatile的作用是作为指令关键字，确保本条指令不会因编译器的优化而省略，且要求每次直接读值。  原子性：volatile不保证原子性 可见性：volatile保证可见性 有序性：volatile部分保证有序性  volatile关键字禁止指令重排序有两层意思：  当程序执行到volatile变量的读操作或者写操">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-01T06:30:24.000Z">
-<meta property="article:modified_time" content="2020-12-01T06:30:24.992Z">
+<meta property="article:modified_time" content="2020-12-02T09:21:26.084Z">
 <meta property="article:author" content="CC">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="EndlessCCL" type="application/atom+xml">
@@ -172,7 +176,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><p>volatile是一个特征修饰符（type specifier）.volatile的作用是作为指令关键字，确保本条指令不会因编译器的优化而省略，且要求每次直接读值。</p>
+<ul>
+<li>原子性：volatile不保证原子性</li>
+<li>可见性：volatile保证可见性</li>
+<li>有序性：volatile部分保证有序性</li>
+</ul>
+<p>volatile关键字禁止指令重排序有两层意思：</p>
+<ol>
+<li>当程序执行到volatile变量的读操作或者写操作时，在其前面的操作的更改肯定全部已经进行，且结果已经对后面的操作可见；在其后面的操作肯定还没有进行；</li>
+<li>在进行指令优化时，不能将在对volatile变量访问的语句放在其后面执行，也不能把volatile变量后面的语句放到其前面执行。</li>
+</ol>
+
       
 
       
@@ -201,6 +216,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -402,6 +432,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GitHub Pages</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
             
             <div class="clearfix"></div>
