@@ -306,12 +306,10 @@
 <h3 id="transient的作用和用法"><a href="#transient的作用和用法" class="headerlink" title="transient的作用和用法"></a>transient的作用和用法</h3><p>当某个或者多个变量或子对象不想被序列化时，使用transient修饰，则java序列化时就不会对其进行序列化。</p>
 <p>transient的使用场景：</p>
 <ol>
-<li><p>变量的值可以被推导出来时，比如图像的面积；</p>
-</li>
-<li><p>敏感信息，比如密码，银行卡账号等；</p>
-</li>
-<li><p>图片、视频等大文件</p>
-</li>
+<li>变量的值可以被推导出来时，比如图像的面积；</li>
+<li>敏感信息，比如密码，银行卡账号等；</li>
+<li>图片、视频等大文件；</li>
+<li>在jdk或者代码中，不可以被序列化的字段。比如没有实现序列化接口不可被序列化的类成员变量，在主类被序列化之前，要标记为transient。</li>
 </ol>
 <p>诸如此类不需要或者不想被序列化的信息，都可以用transient来修饰。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Variables may be marked transient to indicate that they are not part of the persistent state of an object.</span><br></pre></td></tr></table></figure>
