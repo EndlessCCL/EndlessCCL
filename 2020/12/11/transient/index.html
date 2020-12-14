@@ -87,7 +87,7 @@
 <meta property="og:description" content="java序列化Java 提供了一种对象序列化的机制，该机制中，一个对象可以被表示为一个字节序列，该字节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。 将序列化对象写入文件之后，可以从文件中读取出来，并且对它进行反序列化，也就是说，对象的类型信息、对象的数据，还有对象中的数据类型可以用来在内存中新建对象。 整个过程都是 Java 虚拟机（JVM）独立的，也就是说，在一个平台上序">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-12-11T07:37:06.000Z">
-<meta property="article:modified_time" content="2020-12-14T03:29:23.215Z">
+<meta property="article:modified_time" content="2020-12-14T05:55:34.145Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -322,6 +322,18 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原始对象: User&#123;userName=&#x27;test&#x27;, age=10, anything=20&#125;</span><br><span class="line">序列化再反序列化后的对象: User&#123;userName=&#x27;test&#x27;, age=10, anything=0&#125;</span><br></pre></td></tr></table></figure>
 
 <p>可以看到，被transient修饰的anything变量，其值20在序列化的时候并没有被序列化。</p>
+<h3 id="transient-with-final"><a href="#transient-with-final" class="headerlink" title="transient with final"></a>transient with final</h3><p>示例代码修改为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> String userName;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> <span class="keyword">int</span> anything;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">transient</span> String confidentialInfo = <span class="string">&quot;password&quot;</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">transient</span> Logger logger = Logger.getLogger(<span class="string">&quot;User&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原始对象: User&#123;userName=&#x27;test&#x27;, age=10, anything=20, currentInfo=&#x27;password&#x27;&#125;</span><br><span class="line">序列化再反序列化后的对象: User&#123;userName=&#x27;test&#x27;, age=10, anything=0, currentInfo=&#x27;password&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>why？</p>
+<p>final修饰的<em>confidentialInfo</em>，是常量，是持久化的。所以是会被序列化到的。final修饰的<em>logger</em>，是引用。</p>
+<p>如果将<em>logger</em>的修饰符transient去掉，则会报错：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.io.NotSerializableException: java.util.logging.Logger</span><br><span class="line">	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)</span><br><span class="line">	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>所以需要注意，在需要序列化的类中，成员变量如果是不可被序列化的对象的引用，需使用transient修饰。</p>
 
       
     </div>
@@ -487,7 +499,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">java序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transient%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">transient的作用和用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">示例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">java序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transient%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">transient的作用和用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transient-with-final"><span class="nav-number">4.</span> <span class="nav-text">transient with final</span></a></li></ol></div>
             
 
           </div>
