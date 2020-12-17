@@ -88,7 +88,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://endlessccl.github.io/blogImg/img/20201217142628.png">
 <meta property="article:published_time" content="2020-12-17T05:58:32.000Z">
-<meta property="article:modified_time" content="2020-12-17T07:57:21.202Z">
+<meta property="article:modified_time" content="2020-12-17T09:35:18.496Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="Nacos">
 <meta property="article:tag" content="Spring Cloud Alibaba">
@@ -368,6 +368,8 @@
 <p>openfeign调用示例代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AutoWired</span></span><br><span class="line"><span class="keyword">private</span> RemoteClient remoteClient;</span><br><span class="line"></span><br><span class="line"><span class="meta">@GetMapping(&quot;/consumer2&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">test2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> remoteClient.helloNacos();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>本地nacos-server standalone跑的好好的，重启几次应用服务之后，突然报错 server is down now please try again later!</p>
+<p>解决办法：删除nacos/data/protocol文件夹。</p>
 
       
     </div>
@@ -537,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nacos%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">Nacos是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nacos%E4%BD%9C%E4%B8%BA%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">Nacos作为注册中心的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-demo%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.</span> <span class="nav-text">0.demo架构设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%90%AF%E5%8A%A8Nacos-server"><span class="nav-number">2.2.</span> <span class="nav-text">1.启动Nacos-server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BAnacos-provider"><span class="nav-number">2.3.</span> <span class="nav-text">2.创建nacos-provider</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BAnacos-consumer"><span class="nav-number">2.4.</span> <span class="nav-text">3.创建nacos-consumer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%B5%8B%E8%AF%95"><span class="nav-number">2.5.</span> <span class="nav-text">4.测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BD%BF%E7%94%A8openfeign%E8%BF%9B%E8%A1%8C%E6%9C%8D%E5%8A%A1%E9%97%B4%E8%B0%83%E7%94%A8"><span class="nav-number">2.6.</span> <span class="nav-text">5.使用openfeign进行服务间调用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nacos%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">Nacos是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nacos%E4%BD%9C%E4%B8%BA%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">Nacos作为注册中心的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-demo%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.</span> <span class="nav-text">0.demo架构设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%90%AF%E5%8A%A8Nacos-server"><span class="nav-number">2.2.</span> <span class="nav-text">1.启动Nacos-server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BAnacos-provider"><span class="nav-number">2.3.</span> <span class="nav-text">2.创建nacos-provider</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BAnacos-consumer"><span class="nav-number">2.4.</span> <span class="nav-text">3.创建nacos-consumer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%B5%8B%E8%AF%95"><span class="nav-number">2.5.</span> <span class="nav-text">4.测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BD%BF%E7%94%A8openfeign%E8%BF%9B%E8%A1%8C%E6%9C%8D%E5%8A%A1%E9%97%B4%E8%B0%83%E7%94%A8"><span class="nav-number">2.6.</span> <span class="nav-text">5.使用openfeign进行服务间调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
             
 
           </div>

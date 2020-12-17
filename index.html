@@ -364,6 +364,8 @@
 <p>openfeign调用示例代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AutoWired</span></span><br><span class="line"><span class="keyword">private</span> RemoteClient remoteClient;</span><br><span class="line"></span><br><span class="line"><span class="meta">@GetMapping(&quot;/consumer2&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">test2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> remoteClient.helloNacos();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>本地nacos-server standalone跑的好好的，重启几次应用服务之后，突然报错 server is down now please try again later!</p>
+<p>解决办法：删除nacos/data/protocol文件夹。</p>
 
           
         
